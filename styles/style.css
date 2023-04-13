@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+
+    /*========== Colors ==========*/
+    --body-color: #f4f4fc;
+    --history-color: #ffffff;
+    --primary-color: #093872;
+
+    /*========== Font and typography ==========*/
+    --body-font: "Poppins", sans-serif;
+
+    /*========== Font weight ==========*/
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --medium-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --tiny-font-size: 0.625rem;
+
+}
+
+/* Responsive typography */
+@media screen and (max-width: 992px) {
+    :root {
+      --big-font-size: 2.75rem;
+      --h1-font-size: 1.5rem;
+      --h2-font-size: 1.25rem;
+      --h3-font-size: 1rem;
+      --medium-font-size: 1.5rem;
+      --normal-font-size: 0.938rem;
+      --small-font-size: 0.813rem;
+      --smaller-font-size: 0.75rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+button,
+input,
+textarea {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+}
+
+button {
+    border-radius: 24px;
+    border: 1px solid var(--primary-color);
+    box-sizing: border-box;
+    height: 67px;
+    width: 300px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+.grid {
+    display: grid;
+    grid-gap: 1.5rem;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*=============== CSS CLASSES ===============*/
+
+.container {
+    grid-template-areas: 
+    "textArea textArea history"
+    "textArea textArea history";
+    height: 100vh;
+    width: 100%;
+}
+
+/* *Encriptador */
+.encriptador__container {
+    grid-area: textArea;
+    place-items: center;
+    grid-template-rows: 80% 10%;
+}
+.encriptador__container-form {
+    width: 80%;
+    height: 80%;
+}
+.encriptador-input {
+    background: none;
+    border-radius: 0.75rem;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: var(--medium-font-size);
+    margin-bottom: 0.5rem;
+    max-height: 100%; 
+    min-height: 80%;
+    outline: none;
+    padding: 4.5rem;
+    resize: vertical;
+    width: 100%;
+    z-index: 1;
+}
+.button-encriptador {
+    background: var(--primary-color);
+    color: white;
+}
+.button-desencriptador {
+    background: var(--body-color);
+    color: black;
+}
+
+/* *History */
+.history__container {
+    grid-area: history;
+    place-items: center;
+}
+.history__container-box {
+    background-color: var(--history-color);
+    border-radius: 30px;
+    grid-template-rows: 80% 10%;
+    height: 90%;
+    place-items: center;
+    width: 80%;
+}
+.info__history{
+    flex-direction: column;
+}
+.info_menssage {
+    width: 250px;
+    word-wrap: break-word;
+    margin-top: 20px;
+    flex-direction: inherit;
+    text-align: center;
+}
+.flex-item {
+    width: 80%;
+}
+
+/*=============== BREAKPOINTS ===============*/
+
+@media screen and (max-width: 992px) {
+    
+    .container {
+        grid-template-areas: 
+        "textArea textArea"
+        "textArea textArea"
+        "history history";
+    }
+
+    .history__container-box {
+        height: auto;
+        margin: 30px;
+        padding: 30px;
+    }
+    .flex-item-img {
+        display: none;
+    }
+    .encriptador-input {
+        min-height: 650px;
+        max-height: 800px;
+    }
+    .info_menssage {
+        width: 600px;
+    }
+
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  
+    .container {
+        grid-template-areas: 
+        "textArea textArea"
+        "textArea textArea"
+        "textArea textArea"
+        "history history";
+    }
+
+    body {
+        margin: 0 0 var(--header-height) 0;
+    }
+
+    button {
+        margin: 5px;
+        width: 500px;
+    }
+
+    .encriptador__buttons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info_menssage {
+        width: 400px;
+    }
+
+    .encriptador-input {
+        min-height: 450px;
+        max-height: 480px; 
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+    button {
+        width: 300px;
+    }
+
+}
+
+/* For small devices */
+@media screen and (max-width: 470px) {
+    :root {
+        --big-font-size: 2.25rem;
+    }
+    button {
+        width: 200px;
+    }
+    .container {
+        grid-template-areas: 
+        "textArea"
+        "textArea"
+        "textArea"
+        "history";
+    }
+    .info_menssage {
+        width: 200px;
+    }  
+}
+  
+  
+  

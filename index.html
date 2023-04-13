@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">    
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="grid container">
+        <div class="encriptador__container grid">
+            <div class="encriptador__container-form">
+                <textarea class="encriptador-input" type="text" placeholder="Ingrese texto aqui" name="description"></textarea>
+            </div>
+            <div class="encriptador__buttons">
+                <button class="button-encriptador" >Encriptar</button>
+                <button class="button-desencriptador" >Desencriptar</button>
+            </div>
+        </div>
+        <div class="history__container grid">
+            <div class="history__container-box grid">
+                <div class="info__history flex-center">
+
+                    <img src="./assets/Muñeco.svg" alt="history" class="flex-item flex-item-img">
+                        
+                    <div class="info_menssage flex-center">
+                        <h3 class="flex-item ">Ningún mensaje fue encontrado</h3>
+                        <p class="flex-item ">Ingresa el texto que desees encriptar o desencriptar</p>
+                    </div>
+                </div>
+                <button class="button-desencriptador button-copy flex-item" > Copy </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./javascript/metods.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
